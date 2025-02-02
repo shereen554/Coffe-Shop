@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: black;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: black;
+}
+h4{
+    font-size: 20px;
+    color: black;
+}
+h6{
+  font-weight: 700;
+    color: black;
+}
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+    background: rgb(253, 247, 239);
+}
+
+
+
+/* --------------------------------------------Header style */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: white;
+    box-shadow:0px 0px 15px rgb(216, 216, 216);
+
+    position: fixed;  /* اجعل النافبار ثابتًا */
+    top: 0;
+    left: 0;
+    width: 100%;  /* تغطية العرض بالكامل */
+    z-index: 1000; /* لضمان ظهوره فوق كل شيء */
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+nav .log {
+    background-color: rgb(201, 146, 78);
+    color: #000;
+    border-radius: 5px;
+    width: 100px; height: 30px;
+    font-weight: 700; font-style: italic;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  nav .log:hover{
+    background: white;
+  }
+li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+nav li a{
+    color: #000000;
+}
+nav li a:hover,
+nav li a.active{
+    color: rgb(201, 146, 78);
+}
+nav li a.active::after,
+nav li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:rgb(201, 146, 78) ;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* slider header */
+/* slider header */
+/*---------------------------------------- slider header ----------------------------------------------- */
+/* Hero Section */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Slides */
+.mySlides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySlides.active {
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    user-select: none;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption Text */
+.image-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 60%;
+}
+
+/* Dots (Indicators) */
+.dots-container {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
+
+.btn-about {
+    border: white solid;
+    border-radius: 9%;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    display: inline-block;
+    margin: 0px 20px;
+    padding: 2px 19px;
+    transition: 0.5s ease;
+    margin-top: 30px;
+    position: relative;
+    left: -20px;
+}
+
+.btn-about:hover {
+    background: rgb(255, 204, 142);
+    color: white;
+    border: rgb(255, 204, 142) solid;
+}
+
+/*---------------------------------------- slider header ----------------------------------------------- */
+
+
+ /*---------------------------------------- product ---------------------------------------------------*/
+.pro{
+
+    margin-left: 30px;
+    border-radius: 25px;
+    background: white;
+    border: #ffffff solid 15px;
+    justify-items: center;
+    transition: 0.7s ease-in-out;
+}
+.pro:hover{
+    box-shadow: 20px 20px 30px rgb(179, 178, 178);
+}
+
+ .pro img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+ #product1{
+  text-align: center;
+  margin: 0 auto;
+ }
+ #pro-h2{
+    font-size: 80px;
+    margin-bottom: 40px;
+ }
+ #pro-p{
+    font-size: 30px;
+    margin-bottom: 100px;
+ }
+
+ .pro-conainer{
+    display: flex;
+    margin-bottom: 60px;
+ }
+ .cont-img{
+    height: 200px;
+    overflow: hidden;
+  /* border-radius: 25px; */
+    margin-bottom: 30px;
+    width: 90%;
+ }
+ cont-img img{
+    height: 100%;
+    height: 100%;
+ }
+ .pro h4,li{
+    display: inline-block;
+ }
+ .cont-price{
+    text-align: left;
+
+ }
+ .cont-price h4{
+    margin-right: 120px;
+    color:rgb(215, 161, 95)  ;
+
+ }
+.Start i{
+   color: rgb(244, 238, 53);
+}
+.cont-price i{
+    transition: 0.4s ease-in-out;
+}
+.cont-price i:hover{
+    color:rgb(215, 161, 95)  ;
+}
+.circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000;
+    display: inline-block;
+    margin-right: 10px;
+    border: #d29945 solid 4px;
+    transition: 0.3s linear;
+}
+.circle:hover{
+    background: #e7be56;
+}
+
+/* ----------------------------category------------------------------------------- */
+.categories {
+    display: flex; gap: 20px;
+
+  }
+  .card {
+    width: 25%; height: 200px;
+    background-color: rgba(245, 236, 218, 0.779);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+     align-items: center; 
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  .card img {
+    width: 50%; height: 150px;
+    margin-bottom: 10px;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+ /*---------------------------------------- product ---------------------------------------------------*/
+
+ /* footer */
+.myFooter{
+    padding-top: 60px;
+    margin-top: 150px;
+background: rgb(0, 0, 0);
+height: 410px;
+width: 100%;
+}
+.sec1-footer {
+    margin-left: 30px;
+color: white;
+/* text-align: center; */
+float: left;
+width: 35%;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.sec1-footer p{
+margin-top: 20px;
+font-size: 16px;
+font-style: oblique;
+color: rgb(183, 181, 181);
+}
+.sec2-footer{
+    color: rgb(249, 241, 241);
+    width: 25%;
+    float: left;
+    margin-left: 80px;
+    /* list-style: none; */
+    text-align: center;
+}
+#li-style a{
+ color: rgb(183, 181, 181);
+text-decoration: none;
+margin-bottom: 20px;
+
+}
+#li-style a:hover{
+ color: rgb(201, 146, 78);;; 
+   }
+#li-style{
+    margin: 8px;
+    border-bottom: 10px;
+    border-top-color: rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid #777777;
+    padding-bottom: 6px;
+}
+.sec2-footer ul{
+    list-style: none;
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.sec3-footer{
+    color: aliceblue;
+    float: left;
+    margin-left: 80px;
+}
+.sec3-footer li{
+    list-style: none;
+    margin: 10px;
+    font-size: 20px;
+}
+.sec3-footer a{
+    text-decoration: none;
+    color: rgb(183, 181, 181);
+    margin-left: 10px;
+}
+.sec3-footer a:hover{
+    color:  rgb(201, 146, 78);;
+}
+.footer{
+    padding-bottom: 40px;
+    border-bottom: 2px solid #777777;
+}
+.end-footer{
+    text-align: center;
+    color: white;
+}
+.end-footer a{
+    color: rgb(201, 146, 78);
+    text-decoration: none;
+}
+.sec3-footer li {
+    display: block;
+}
+.clear{
+    clear: both;  
+  }

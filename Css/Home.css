@@ -256,7 +256,10 @@ nav li a:hover::after{
 
  .pro-conainer{
     display: flex;
+    justify-content: center; /* توسيط العناصر أفقياً */
+    align-items: center; /* توسيط العناصر رأسياً إذا لزم الأمر */
     margin-bottom: 60px;
+    flex-wrap: wrap; /* لضمان استجابة التصميم للشاشات الصغيرة */
  }
  .cont-img{
     height: 200px;

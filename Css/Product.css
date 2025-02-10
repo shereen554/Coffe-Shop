@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: black;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: black;
+}
+h4{
+    font-size: 20px;
+    color: black;
+}
+h6{
+  font-weight: 700;
+    color: black;
+}
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+    background: rgb(253, 247, 239);
+}
+
+
+
+/* --------------------------------------------Header style */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: white;
+    box-shadow:0px 0px 15px rgb(216, 216, 216);
+
+    position: fixed;  /* اجعل النافبار ثابتًا */
+    top: 0;
+    left: 0;
+    width: 100%;  /* تغطية العرض بالكامل */
+    z-index: 1000; /* لضمان ظهوره فوق كل شيء */
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+nav .log {
+    background-color: rgb(201, 146, 78);
+    color: #000;
+    border-radius: 5px;
+    width: 100px; height: 30px;
+    font-weight: 700; font-style: italic;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  nav .log:hover{
+    background: white;
+  }
+li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+nav li a{
+    color: #000000;
+}
+nav li a:hover,
+nav li a.active{
+    color: rgb(201, 146, 78);
+}
+nav li a.active::after,
+nav li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:rgb(201, 146, 78) ;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+ /* product----------------------------- */
+
+
+
+
+ /* -------------------------------------footer */
+
+  /* footer */
+.myFooter{
+    padding-top: 60px;
+    margin-top: 150px;
+background: rgb(0, 0, 0);
+height: 410px;
+width: 100%;
+}
+.sec1-footer {
+    margin-left: 30px;
+color: white;
+/* text-align: center; */
+float: left;
+width: 35%;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.sec1-footer p{
+margin-top: 20px;
+font-size: 16px;
+font-style: oblique;
+color: rgb(183, 181, 181);
+}
+.sec2-footer{
+    color: rgb(249, 241, 241);
+    width: 25%;
+    float: left;
+    margin-left: 80px;
+    /* list-style: none; */
+    text-align: center;
+}
+#li-style a{
+ color: rgb(183, 181, 181);
+text-decoration: none;
+margin-bottom: 20px;
+
+}
+#li-style a:hover{
+ color: rgb(201, 146, 78);;; 
+   }
+#li-style{
+    margin: 8px;
+    border-bottom: 10px;
+    border-top-color: rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid #777777;
+    padding-bottom: 6px;
+}
+.sec2-footer ul{
+    list-style: none;
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.sec3-footer{
+    color: aliceblue;
+    float: left;
+    margin-left: 80px;
+}
+.sec3-footer li{
+    list-style: none;
+    margin: 10px;
+    font-size: 20px;
+}
+.sec3-footer a{
+    text-decoration: none;
+    color: rgb(183, 181, 181);
+    margin-left: 10px;
+}
+.sec3-footer a:hover{
+    color:  rgb(201, 146, 78);;
+}
+.footer{
+    padding-bottom: 40px;
+    border-bottom: 2px solid #777777;
+}
+.end-footer{
+    text-align: center;
+    color: white;
+}
+.end-footer a{
+    color: rgb(201, 146, 78);
+    text-decoration: none;
+}
+.sec3-footer li {
+    display: block;
+}
+.clear{
+    clear: both;  
+  }
+
+  /* products ------------------------------------------------ */
+
+/* تنسيق العنصر الرئيسي للمنتج */
+.pro {
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    align-items: center; /* توسيط العناصر */
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+    width: 60%; /* جعل العرض مناسبًا */
+    margin: auto;
+    margin-top: 100px;
+}
+
+/* تنسيق صورة المنتج */
+.cont-img {
+    width: 80%;
+    max-width: 300px; /* تحديد أقصى عرض */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.cont-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* إضافة حواف دائرية للصورة */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* تأثير عند تمرير الماوس على الصورة */
+.cont-img img:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التحويم */
+}
+
+/* تنسيق القسم النصي */
+.des h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.des span {
+    font-size: 18px;
+    color: #666;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* تنسيق النجوم */
+.Start {
+    margin: 10px 0;
+    color: gold; /* تحديد لون النجوم */
+    font-size: 20px;
+}
+
+/* تنسيق السعر */
+.cont-price h4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+ .log {
+    background-color: rgb(201, 146, 78);
+    color: #000;
+    border-radius: 5px;
+    width: 200px; height: 35px;
+    font-weight: 700; 
+    font-style: italic;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+  }
+ .log:hover{
+    background: white;
+  }
+
+

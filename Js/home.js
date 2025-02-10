@@ -27,8 +27,8 @@ function autoSlide() {
 
 // Start the slider
 document.addEventListener("DOMContentLoaded", () => {
-    slides[0].classList.add("active"); // تأكد من ظهور أول شريحة عند تحميل الصفحة
-    dots[0].classList.add("active");  // تأكد من ظهور النقطة النشطة الأولى
+    slides[0].classList.add("active"); 
+    dots[0].classList.add("active");  
     setTimeout(autoSlide, 3000);
 });
 
@@ -175,12 +175,13 @@ function showProducts(category) {
                </div>
                <div class="cont-price">
                 <h4>${item.Price}</h4>
-               <a href="show.html"> <div class="circle"></div></a>
+           <div class="circle"  onclick='showInfo(${JSON.stringify(item)})'></div>
                 <a href=""> <li><a href="#" class="text-primary-emphasis"><i class="fa-solid fa-cart-shopping cart"></i></a></li></a>
                </div>
               </div>
            </div>`;
     } 
+
   });
 }
 
@@ -192,3 +193,44 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("Ice").addEventListener("click", () => showProducts("Ice"));
   document.getElementById("Hot").addEventListener("click", () => showProducts("Hot"));
   document.getElementById("Juice").addEventListener("click", () => showProducts("Juice"));
+
+  function showDetails(selectedProduct) {
+    let productContainer = document.getElementById("product");
+    if (!productContainer) return;
+
+    productContainer.innerHTML = "";
+    
+    products.forEach((item) => {
+        if (item.Name === selectedProduct.Name) {
+            productContainer.innerHTML += `
+            <div class="me-5 mb-5 col-3 pro">
+                <div class="cont-img">
+                    <img src="${item.Image}" alt="product">
+                </div>
+                <div class="des">
+                    <h5 id="pro-Name">${item.Name}</h5>
+                    <span>High quality coffee beans</span>
+                    <div class="Start">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="cont-price">
+                        <h4>${item.Price}</h4>
+                        <i class="fa-solid fa-eye" style="cursor:pointer" onclick='showInfo(${JSON.stringify(item)})'></i>
+                        <a href="#" onclick="event.preventDefault(); addToCart(${JSON.stringify(item)})">
+                            <i class="fa-solid fa-cart-shopping cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>`;
+        }
+    });
+}
+
+function showInfo(product) {
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+    window.location.href = "../Html/Product.html";
+  }

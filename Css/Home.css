@@ -426,3 +426,27 @@ h4{
 .clear{
     clear: both;  
   }
+
+
+    #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e18427;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(241, 154, 5, 0.805);
+        transition: background-color 0.3s ease, opacity 0.3s ease; /* إضافة تأثير على الظهور */
+        z-index: 1000;
+        opacity: 0; /* إخفاء الزر افتراضيًا */
+        visibility: hidden; /* لمنع التفاعل معه وهو مخفي */
+    }
+    
+    #back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }

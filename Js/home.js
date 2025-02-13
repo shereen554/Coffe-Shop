@@ -176,7 +176,7 @@ function showProducts(category) {
                <div class="cont-price">
                 <h4>${item.Price}</h4>
            <div class="circle"  onclick='showInfo(${JSON.stringify(item)})'></div>
-                <a href=""> <li><a href="#" class="text-primary-emphasis"><i class="fa-solid fa-cart-shopping cart"></i></a></li></a>
+            <li ><a href="../Html/orderdetails.html" class="text-primary-emphasis"><i class="fa-solid fa-cart-shopping cart"  onclick='addToCart(${JSON.stringify(item)})'></i></a></li>
                </div>
               </div>
            </div>`;
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="cont-price">
                         <h4>${item.Price}</h4>
                         <i class="fa-solid fa-eye" style="cursor:pointer" onclick='showInfo(${JSON.stringify(item)})'></i>
-                        <a href="#" onclick="event.preventDefault(); addToCart(${JSON.stringify(item)})">
+                        <a href="#">
                             <i class="fa-solid fa-cart-shopping cart"></i>
                         </a>
                     </div>
@@ -234,3 +234,60 @@ function showInfo(product) {
     localStorage.setItem("selectedProduct", JSON.stringify(product));
     window.location.href = "../Html/Product.html";
   }
+
+
+
+  function addToCart(product) {
+    const existingItem = cart.find((item) => item.Name === product.Name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      product.quantity = 1;
+      cart.push(product);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCounter();
+  }
+
+
+  let username = localStorage.getItem("username");
+    let usernameElem = document.querySelector(".display-username");
+    let loginButton = document.querySelector(".log");
+
+    if (usernameElem) {
+        usernameElem.textContent = username ? `Welcome ${username}` : "Welcome Guest";
+    }
+    if (loginButton) {
+        if (username) {
+            loginButton.textContent = "Logout";
+            loginButton.addEventListener("click", () => {
+                localStorage.removeItem("username");
+                window.location.reload();
+            });
+        } else {
+            loginButton.textContent = "Login";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let backToTopButton = document.getElementById("back-to-top");
+    
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 700) { // يظهر بعد التمرير 200 بكسل
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+    
+        backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+
+    const scrollToTopBtn = document.getElementById("back-to-top");
+
+    // Scroll to top
+scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });

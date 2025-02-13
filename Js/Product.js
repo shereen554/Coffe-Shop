@@ -79,3 +79,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   }
 });
+
+
+let username = localStorage.getItem("username");
+    let usernameElem = document.querySelector(".display-username");
+    let loginButton = document.querySelector(".log");
+
+    if (usernameElem) {
+        usernameElem.textContent = username ? `Welcome ${username}` : "Welcome Guest";
+    }
+    if (loginButton) {
+        if (username) {
+            loginButton.textContent = "Logout";
+            loginButton.addEventListener("click", () => {
+                localStorage.removeItem("username");
+                window.location.reload();
+            });
+        } else {
+            loginButton.textContent = "Login";
+        }
+    }
